@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../bhaskara/presentation/bhaskara_tab.dart';
 import 'widgets/calculator_display.dart';
 import 'widgets/calculator_grid.dart';
 
@@ -7,22 +8,37 @@ class CalculatorScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Extensible Calculator',
-          style: TextStyle(fontSize: 16),
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            'Extensible Calculator',
+            style: TextStyle(fontSize: 18),
+          ),
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+          bottom: const TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.calculate), text: 'Calculadora'),
+              Tab(icon: Icon(Icons.functions), text: 'Bhaskara'),
+            ],
+          ),
         ),
-        backgroundColor: Colors.blueGrey,
-        toolbarHeight: 35,
-      ),
-      body: const SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
+        body: const SafeArea(
+          child: TabBarView(
             children: [
-              CalculatorDisplay(),
-              Divider(height: 1),
-              CalculatorGrid(),
+              // Calculadora Padrão
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    CalculatorDisplay(),
+                    Divider(height: 1),
+                    CalculatorGrid(),
+                  ],
+                ),
+              ),
+              // Calculadora de Bhaskara
+              BhaskaraTab(),
             ],
           ),
         ),

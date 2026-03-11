@@ -1,4 +1,7 @@
-# Ignorar pastas de plataforma que poluem as estatísticas
+.agent/* linguist-vendored
+.cursor/commands/* linguist-vendored
+.specify/* linguist-vendored
+
 android/* linguist-vendored
 ios/* linguist-vendored
 web/* linguist-vendored
@@ -6,7 +9,6 @@ linux/* linguist-vendored
 macos/* linguist-vendored
 windows/* linguist-vendored
 
-# Se houver alguma pasta de scripts ou ambiente Python que você queira ocultar
 scripts/* linguist-vendored
 venv/* linguist-vendored
 .venv/* linguist-vendored

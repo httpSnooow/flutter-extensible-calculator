@@ -1,14 +1,17 @@
-.agent/* linguist-vendored
-.cursor/commands/* linguist-vendored
-.specify/* linguist-vendored
 
-android/* linguist-vendored
-ios/* linguist-vendored
-web/* linguist-vendored
-linux/* linguist-vendored
-macos/* linguist-vendored
-windows/* linguist-vendored
+android/** linguist-detectable=false
+ios/** linguist-detectable=false
+web/** linguist-detectable=false
+linux/** linguist-detectable=false
+macos/** linguist-detectable=false
+windows/** linguist-detectable=false
 
-scripts/* linguist-vendored
-venv/* linguist-vendored
-.venv/* linguist-vendored
+.agent/** linguist-detectable=false
+.cursor/** linguist-detectable=false
+.specify/** linguist-detectable=false
+
+**/venv/** linguist-detectable=false
+**/.venv/** linguist-detectable=false
+**/scripts/** linguist-detectable=false
+
+*.py linguist-detectable=false

@@ -1,0 +1,14 @@
+.agent/* linguist-vendored
+.cursor/commands/* linguist-vendored
+.specify/* linguist-vendored
+
+android/* linguist-vendored
+ios/* linguist-vendored
+web/* linguist-vendored
+linux/* linguist-vendored
+macos/* linguist-vendored
+windows/* linguist-vendored
+
+scripts/* linguist-vendored
+venv/* linguist-vendored
+.venv/* linguist-vendored

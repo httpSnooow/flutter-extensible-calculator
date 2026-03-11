@@ -6,6 +6,7 @@ linux/** linguist-detectable=false
 macos/** linguist-detectable=false
 windows/** linguist-detectable=false
 
+specs/** linguist-detectable=false
 .agent/** linguist-detectable=false
 .cursor/** linguist-detectable=false
 .specify/** linguist-detectable=false

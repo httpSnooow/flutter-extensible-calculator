@@ -1,7 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'src/calculator/domain/operations_registry.dart';
+import 'src/calculator/domain/operations/addition.dart';
+import 'src/calculator/domain/operations/subtraction.dart';
+import 'src/calculator/domain/operations/multiplication.dart';
+import 'src/calculator/domain/operations/division.dart';
+import 'src/calculator/domain/operations/sqrt.dart';
+import 'src/calculator/logic/calculator_engine.dart';
+import 'src/calculator/presentation/calculator_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  final registry = OperationsRegistry()
+    ..register(AdditionOperation())
+    ..register(SubtractionOperation())
+    ..register(MultiplicationOperation())
+    ..register(DivisionOperation())
+    ..register(SqrtOperation());
+
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(value: registry),
+        ChangeNotifierProvider(create: (_) => CalculatorEngine()),
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -9,14 +33,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print("passei aqui2");
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Exemplo',
+      title: 'Extensible Calculator',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
+        useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Página Inicial do Flutter Exemplo'),
+      home: const CalculatorScreen(),
     );
   }
 }
@@ -47,7 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    print("passei aqui3");
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,

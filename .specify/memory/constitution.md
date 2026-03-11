@@ -1,50 +1,41 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report
+- Version change: N/A → 0.1.0
+- List of modified principles: Initial Initialization (I. Widget-Driven Architecture, II. Test-First Reliability, III. State & Logic Separation, IV. Lint & Style Compliance, V. Asset & Localization Discipline)
+- Added sections: Core Principles, Storage & Data Standards, Quality Gates, Governance
+- Removed sections: None
+- Templates requiring updates: ✅ All templates verified for alignment
+- Follow-up TODOs: None
+-->
+# first_app_ueg_20261 Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Widget-Driven Architecture
+Break down UI into small, reusable widgets. Follow atomic design principles where possible (atoms, molecules, organisms). Widgets MUST be stateless unless state is strictly local.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Test-First Reliability (NON-NEGOTIABLE)
+Every feature MUST have corresponding widget or unit tests. Integration tests are required for P1 user journeys. Tests must pass before merging.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. State & Logic Separation
+Business logic MUST be separated from the UI layer. Use clear patterns like BLoC, Provider, or simple Controllers to manage shared state.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Lint & Style Compliance
+Adhere strictly to 'flutter_lints'. No warnings allowed in production code. Use consistent naming conventions (camelCase for variables, PascalCase for classes).
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Asset & Localization Discipline
+Avoid hardcoded strings and paths. Use centralized asset management and localization files to ensure maintainability and future internationalization.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Storage & Data Standards
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Use 'shared_preferences' for simple local state and SQL or local files for complex persistence. API calls should handle errors gracefully with retry/timeout logic.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Quality Gates
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Automatic linting, unit tests, and the 'speckit.analyze' consistency report must be reviewed for every pull request.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+Amendments require documented justification and a version bump in 'constitution.md'. This document supersedes ad-hoc development decisions.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 0.1.0 | **Ratified**: 2026-02-20 | **Last Amended**: 2026-02-20

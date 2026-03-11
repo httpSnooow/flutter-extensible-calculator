@@ -1,0 +1,30 @@
+# first_app_ueg_20261 Development Guidelines
+
+Auto-generated from all feature plans. Last updated: 2026-02-20
+
+## Active Technologies
+
+- Dart 3.11+ (per pubspec.yaml) + Flutter SDK, `provider` or `bloc` for state management, `get_it` for dependency injection/registration (NEEDS CLARIFICATION) (001-extensible-calculator)
+
+## Project Structure
+
+```text
+src/
+tests/
+```
+
+## Commands
+
+# Add commands for Dart 3.11+ (per pubspec.yaml)
+
+## Code Style
+
+Dart 3.11+ (per pubspec.yaml): Follow standard conventions
+
+## Recent Changes
+- 001-extensible-calculator: Added Dart 3.11+ (per pubspec.yaml) + Flutter SDK, `provider` or `bloc` for state management, `get_it` for dependency injection/registration (NEEDS CLARIFICATION)
+
+- 001-extensible-calculator: Added Dart 3.11+ (per pubspec.yaml) + Flutter SDK, `provider` or `bloc` for state management, `get_it` for dependency injection/registration (NEEDS CLARIFICATION)
+
+<!-- MANUAL ADDITIONS START -->
+<!-- MANUAL ADDITIONS END -->
